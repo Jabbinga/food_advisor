@@ -64,10 +64,23 @@ namespace Licencjat.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Kcal")] Dish dish)
+        public async Task<IActionResult> Create([Bind("Id,Name,Kcal")] Dish dish, IFormFile imageFile)
         {
             if (ModelState.IsValid)
             {
+                if (imageFile != null)
+                {
+                    string uniqueFileName = Path.GetFileNameWithoutExtension(imageFile.FileName) + "_" + Guid.NewGuid() + Path.GetExtension(imageFile.FileName);
+                    string filePath = Path.Combine("wwwroot/images", uniqueFileName);
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await imageFile.CopyToAsync(stream);
+                    }
+
+                    dish.ImagePath = "/images/" + uniqueFileName;
+                }
+
                 _context.Add(dish);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -96,7 +109,7 @@ namespace Licencjat.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Kcal")] Dish dish)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Kcal,ImagePath")] Dish dish, IFormFile imageFile)
         {
             if (id != dish.Id)
             {
@@ -107,6 +120,19 @@ namespace Licencjat.Controllers
             {
                 try
                 {
+                    if (imageFile != null)
+                    {
+                        string uniqueFileName = Path.GetFileNameWithoutExtension(imageFile.FileName) + "_" + Guid.NewGuid() + Path.GetExtension(imageFile.FileName);
+                        string filePath = Path.Combine("wwwroot/images", uniqueFileName);
+
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await imageFile.CopyToAsync(stream);
+                        }
+
+                        dish.ImagePath = "/images/" + uniqueFileName;
+                    }
+
                     _context.Update(dish);
                     await _context.SaveChangesAsync();
                 }

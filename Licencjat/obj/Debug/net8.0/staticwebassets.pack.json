@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets/favicon.ico"
     },
     {
+      "Id": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/images/Zrzut ekranu 2023-06-9 o 16.02.06_ee10592a-cd5b-4331-94e3-21a96cd3e0cb.png",
+      "PackagePath": "staticwebassets/images/Zrzut ekranu 2023-06-9 o 16.02.06_ee10592a-cd5b-4331-94e3-21a96cd3e0cb.png"
+    },
+    {
       "Id": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/js/site.js",
       "PackagePath": "staticwebassets/js/site.js"
     },

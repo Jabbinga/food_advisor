@@ -17,13 +17,10 @@ namespace Licencjat.Models
         [DisplayName("Kcal per 100g")]
         public uint Kcal { get; set; }
 
-        // Navigation property for the join table
+        public string? ImagePath { get; set; }
+
+        // Navigation properties for the join tables
         public ICollection<DishTag> DishTags { get; set; } = new List<DishTag>();
         public ICollection<DishIngredient> DishIngredients { get; set; } = new List<DishIngredient>();
-
-        // TODO zamien jak skonfigurujesz identity 
-        //public AppUser? User { get; set; }
-        //[DisplayName("User")]
-        //public string? UserId { get; set; }
     }
 }

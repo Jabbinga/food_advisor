@@ -11,23 +11,44 @@
     <h4>Dish</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
+        <dt class="col-sm-2">
+            Name
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
+        <dd class="col-sm-10">
+            @Model.Name
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Kcal)
+        <dt class="col-sm-2">
+            Kcal
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Kcal)
+        <dd class="col-sm-10">
+            @Model.Kcal
+        </dd>
+        <dt class="col-sm-2">
+            Image
+        </dt>
+        <dd class="col-sm-10">
+            @if (!string.IsNullOrEmpty(Model.ImagePath))
+            {
+            <img src="@Model.ImagePath" alt="@Model.Name" width="200" />
+            }
+        </dd>
+        <dt class="col-sm-2">
+            Tags
+        </dt>
+        <dd class="col-sm-10">
+            @foreach (var dishTag in Model.DishTags)
+            {
+            <span>@dishTag.Tag.Name</span><br />
+            }
+        </dd>
+        <dt class="col-sm-2">
+            Ingredients
+        </dt>
+        <dd class="col-sm-10">
+            @foreach (var dishIngredient in Model.DishIngredients)
+            {
+            <span>@dishIngredient.Ingredient.Name (@dishIngredient.Ingredient.Kcal Kcal/100g)</span><br />
+            }
         </dd>
     </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
 </div>

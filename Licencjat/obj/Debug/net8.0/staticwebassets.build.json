@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YQ+bJpdUVFmCmSAXMyymliNKuy6ZWwfu915Px2Y5ho8=",
+  "Hash": "i2YZJaw872TsoK7Mnva+K8qYsPfajfHLT+jLigMepjk=",
   "Source": "Licencjat",
   "BasePath": "_content/Licencjat",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.ico"
+    },
+    {
+      "Identity": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/images/Zrzut ekranu 2023-06-9 o 16.02.06_ee10592a-cd5b-4331-94e3-21a96cd3e0cb.png",
+      "SourceId": "Licencjat",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/",
+      "BasePath": "_content/Licencjat",
+      "RelativePath": "images/Zrzut ekranu 2023-06-9 o 16.02.06_ee10592a-cd5b-4331-94e3-21a96cd3e0cb.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/Zrzut ekranu 2023-06-9 o 16.02.06_ee10592a-cd5b-4331-94e3-21a96cd3e0cb.png"
     },
     {
       "Identity": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/js/site.js",
