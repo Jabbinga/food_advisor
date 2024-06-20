@@ -10,23 +10,22 @@ using Licencjat.Models;
 
 namespace Licencjat.Controllers
 {
-    public class IngredientsController : Controller
+    public class IngredientController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public IngredientsController(ApplicationDbContext context)
+        public IngredientController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Ingredients
+        // GET: Ingredient
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Ingredients.Include(i => i.IngredientType);
-            return View(await applicationDbContext.ToListAsync());
+            return View(await _context.Ingredients.ToListAsync());
         }
 
-        // GET: Ingredients/Details/5
+        // GET: Ingredient/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -35,7 +34,6 @@ namespace Licencjat.Controllers
             }
 
             var ingredient = await _context.Ingredients
-                .Include(i => i.IngredientType)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (ingredient == null)
             {
@@ -45,19 +43,18 @@ namespace Licencjat.Controllers
             return View(ingredient);
         }
 
-        // GET: Ingredients/Create
+        // GET: Ingredient/Create
         public IActionResult Create()
         {
-            ViewData["IngredientTypeId"] = new SelectList(_context.IngredientType, "Id", "Name");
             return View();
         }
 
-        // POST: Ingredients/Create
+        // POST: Ingredient/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Kcal,IngredientTypeId")] Ingredient ingredient)
+        public async Task<IActionResult> Create([Bind("Id,Name,Kcal")] Ingredient ingredient)
         {
             if (ModelState.IsValid)
             {
@@ -65,11 +62,10 @@ namespace Licencjat.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IngredientTypeId"] = new SelectList(_context.IngredientType, "Id", "Name", ingredient.IngredientTypeId);
             return View(ingredient);
         }
 
-        // GET: Ingredients/Edit/5
+        // GET: Ingredient/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,16 +78,15 @@ namespace Licencjat.Controllers
             {
                 return NotFound();
             }
-            ViewData["IngredientTypeId"] = new SelectList(_context.IngredientType, "Id", "Name", ingredient.IngredientTypeId);
             return View(ingredient);
         }
 
-        // POST: Ingredients/Edit/5
+        // POST: Ingredient/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Kcal,IngredientTypeId")] Ingredient ingredient)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Kcal")] Ingredient ingredient)
         {
             if (id != ingredient.Id)
             {
@@ -118,11 +113,10 @@ namespace Licencjat.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IngredientTypeId"] = new SelectList(_context.IngredientType, "Id", "Name", ingredient.IngredientTypeId);
             return View(ingredient);
         }
 
-        // GET: Ingredients/Delete/5
+        // GET: Ingredient/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -131,7 +125,6 @@ namespace Licencjat.Controllers
             }
 
             var ingredient = await _context.Ingredients
-                .Include(i => i.IngredientType)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (ingredient == null)
             {
@@ -141,7 +134,7 @@ namespace Licencjat.Controllers
             return View(ingredient);
         }
 
-        // POST: Ingredients/Delete/5
+        // POST: Ingredient/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

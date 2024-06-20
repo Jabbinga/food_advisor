@@ -286,3 +286,4 @@
 /Users/natproview/RiderProjects/new/Licencjat/Licencjat/obj/Debug/net8.0/Licencjat.pdb
 /Users/natproview/RiderProjects/new/Licencjat/Licencjat/obj/Debug/net8.0/Licencjat.genruntimeconfig.cache
 /Users/natproview/RiderProjects/new/Licencjat/Licencjat/obj/Debug/net8.0/ref/Licencjat.dll
+/Users/natproview/RiderProjects/new/Licencjat/Licencjat/obj/Debug/net8.0/Licencjat.sourcelink.json

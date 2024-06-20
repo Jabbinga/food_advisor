@@ -37,6 +37,11 @@
       <_ContentIncludedByDefault Remove="Views\Ingredients\Details.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Ingredients\Edit.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Ingredients\Index.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\IngredientTypes\Create.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\IngredientTypes\Delete.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\IngredientTypes\Details.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\IngredientTypes\Edit.cshtml" />
+      <_ContentIncludedByDefault Remove="Views\IngredientTypes\Index.cshtml" />
     </ItemGroup>
 
 </Project>

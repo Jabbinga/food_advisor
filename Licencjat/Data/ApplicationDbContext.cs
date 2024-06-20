@@ -36,7 +36,23 @@ public class ApplicationDbContext : IdentityDbContext
             .HasOne(dt => dt.Tag)
             .WithMany(t => t.DishTags)
             .HasForeignKey(dt => dt.TagId);
+        
+        modelBuilder.Entity<DishIngredient>()
+            .HasKey(di => new { di.DishId, di.IngredientId });
+
+        modelBuilder.Entity<DishIngredient>()
+            .HasOne(di => di.Dish)
+            .WithMany(d => d.DishIngredients)
+            .HasForeignKey(di => di.DishId);
+
+        modelBuilder.Entity<DishIngredient>()
+            .HasOne(di => di.Ingredient)
+            .WithMany(i => i.DishIngredients)
+            .HasForeignKey(di => di.IngredientId);
+        
     }
 
 public DbSet<Licencjat.Models.Ingredient> Ingredient { get; set; } = default!;
+
+public DbSet<Licencjat.Models.DishIngredient> DishIngredient { get; set; } = default!;
 }

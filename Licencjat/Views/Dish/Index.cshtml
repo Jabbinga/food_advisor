@@ -1,41 +1,41 @@
 @model IEnumerable<Licencjat.Models.Dish>
 
-@{
-    ViewData["Title"] = "Index";
-}
+<h2>Dishes</h2>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Kcal)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>Name</th>
+        <th>Kcal</th>
+        <th>Tags</th>
+        <th>Ingredients</th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Kcal)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+    @foreach (var dish in Model)
+    {
+    <tr>
+        <td>@dish.Name</td>
+        <td>@dish.Kcal</td>
+        <td>
+            @foreach (var dishTag in dish.DishTags)
+            {
+            <span>@dishTag.Tag.Name</span><br />
+            }
+        </td>
+        <td>
+            @foreach (var dishIngredient in dish.DishIngredients)
+            {
+            <span>@dishIngredient.Ingredient.Name (@dishIngredient.Ingredient.Kcal Kcal/100g)</span><br />
+            }
+        </td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@dish.Id">Edit</a> |
+            <a asp-action="Details" asp-route-id="@dish.Id">Details</a> |
+            <a asp-action="Delete" asp-route-id="@dish.Id">Delete</a>
+        </td>
+    </tr>
+    }
     </tbody>
 </table>

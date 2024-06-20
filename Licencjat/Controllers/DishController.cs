@@ -22,7 +22,13 @@ namespace Licencjat.Controllers
         // GET: Dish
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Dish.ToListAsync());
+            var dishes = await _context.Dish
+                .Include(d => d.DishTags)
+                .ThenInclude(dt => dt.Tag)
+                .Include(d => d.DishIngredients)
+                .ThenInclude(di => di.Ingredient)
+                .ToListAsync();
+            return View(dishes);
         }
 
         // GET: Dish/Details/5
@@ -34,6 +40,10 @@ namespace Licencjat.Controllers
             }
 
             var dish = await _context.Dish
+                .Include(d => d.DishTags)
+                .ThenInclude(dt => dt.Tag)
+                .Include(d => d.DishIngredients)
+                .ThenInclude(di => di.Ingredient)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (dish == null)
             {
