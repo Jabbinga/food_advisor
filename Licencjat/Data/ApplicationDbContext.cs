@@ -11,6 +11,8 @@ public class ApplicationDbContext : IdentityDbContext
     {
     }
 
+    public DbSet<Licencjat.Models.Ingredient> Ingredients { get; set; } = default!;
+
     public DbSet<Licencjat.Models.IngredientType> IngredientType { get; set; } = default!;
     public DbSet<Licencjat.Models.Dish> Dish { get; set; } = default!;
     public DbSet<Licencjat.Models.Tag> Tag { get; set; } = default!;

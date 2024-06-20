@@ -22,7 +22,8 @@ namespace Licencjat.Controllers
         // GET: Ingredients
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Ingredient.ToListAsync());
+            var applicationDbContext = _context.Ingredients.Include(i => i.IngredientType);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Ingredients/Details/5
@@ -33,7 +34,8 @@ namespace Licencjat.Controllers
                 return NotFound();
             }
 
-            var ingredient = await _context.Ingredient
+            var ingredient = await _context.Ingredients
+                .Include(i => i.IngredientType)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (ingredient == null)
             {
@@ -46,6 +48,7 @@ namespace Licencjat.Controllers
         // GET: Ingredients/Create
         public IActionResult Create()
         {
+            ViewData["IngredientTypeId"] = new SelectList(_context.IngredientType, "Id", "Name");
             return View();
         }
 
@@ -54,7 +57,7 @@ namespace Licencjat.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Kcal")] Ingredient ingredient)
+        public async Task<IActionResult> Create([Bind("Id,Name,Kcal,IngredientTypeId")] Ingredient ingredient)
         {
             if (ModelState.IsValid)
             {
@@ -62,6 +65,7 @@ namespace Licencjat.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IngredientTypeId"] = new SelectList(_context.IngredientType, "Id", "Name", ingredient.IngredientTypeId);
             return View(ingredient);
         }
 
@@ -73,11 +77,12 @@ namespace Licencjat.Controllers
                 return NotFound();
             }
 
-            var ingredient = await _context.Ingredient.FindAsync(id);
+            var ingredient = await _context.Ingredients.FindAsync(id);
             if (ingredient == null)
             {
                 return NotFound();
             }
+            ViewData["IngredientTypeId"] = new SelectList(_context.IngredientType, "Id", "Name", ingredient.IngredientTypeId);
             return View(ingredient);
         }
 
@@ -86,7 +91,7 @@ namespace Licencjat.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Kcal")] Ingredient ingredient)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Kcal,IngredientTypeId")] Ingredient ingredient)
         {
             if (id != ingredient.Id)
             {
@@ -113,6 +118,7 @@ namespace Licencjat.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["IngredientTypeId"] = new SelectList(_context.IngredientType, "Id", "Name", ingredient.IngredientTypeId);
             return View(ingredient);
         }
 
@@ -124,7 +130,8 @@ namespace Licencjat.Controllers
                 return NotFound();
             }
 
-            var ingredient = await _context.Ingredient
+            var ingredient = await _context.Ingredients
+                .Include(i => i.IngredientType)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (ingredient == null)
             {
@@ -139,10 +146,10 @@ namespace Licencjat.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var ingredient = await _context.Ingredient.FindAsync(id);
+            var ingredient = await _context.Ingredients.FindAsync(id);
             if (ingredient != null)
             {
-                _context.Ingredient.Remove(ingredient);
+                _context.Ingredients.Remove(ingredient);
             }
 
             await _context.SaveChangesAsync();
@@ -151,7 +158,7 @@ namespace Licencjat.Controllers
 
         private bool IngredientExists(int id)
         {
-            return _context.Ingredient.Any(e => e.Id == id);
+            return _context.Ingredients.Any(e => e.Id == id);
         }
     }
 }

@@ -20,4 +20,7 @@ public class Ingredient
     [Required]
     [DisplayName("Type")]
     public IngredientType? IngredientType { get; set; }
-    }
+
+    [DisplayName("Ingredient Type")] 
+    public int IngredientTypeId { get; set; }
+}
