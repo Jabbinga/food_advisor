@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Licencjat.Data;
 using Licencjat.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Licencjat.Controllers
 {
@@ -113,7 +114,7 @@ namespace Licencjat.Controllers
             }
             return View(dish);
         }
-
+        
         // GET: Dish/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -179,6 +180,7 @@ namespace Licencjat.Controllers
         }
 
         // GET: Dish/Delete/5
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -195,7 +197,7 @@ namespace Licencjat.Controllers
 
             return View(dish);
         }
-
+        [Authorize(Roles = "Administrator")]
         // POST: Dish/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]

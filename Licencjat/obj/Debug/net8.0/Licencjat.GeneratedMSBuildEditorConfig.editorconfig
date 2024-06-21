@@ -17,167 +17,167 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Licencjat
 build_property.RootNamespace = Licencjat
-build_property.ProjectDir = D:\REPOS\Licencjat2024\Licencjat\
+build_property.ProjectDir = /Users/natproview/RiderProjects/new/Licencjat/Licencjat/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\REPOS\Licencjat2024\Licencjat
+build_property.MSBuildProjectDirectory = /Users/natproview/RiderProjects/new/Licencjat/Licencjat
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Areas/Identity/Pages/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXMvSWRlbnRpdHkvUGFnZXMvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/DishIngredient/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaEluZ3JlZGllbnRcQ3JlYXRlLmNzaHRtbA==
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Dish/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzaC9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/DishIngredient/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaEluZ3JlZGllbnRcRGVsZXRlLmNzaHRtbA==
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Dish/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzaC9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/DishIngredient/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaEluZ3JlZGllbnRcRGV0YWlscy5jc2h0bWw=
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Dish/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzaC9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/DishIngredient/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaEluZ3JlZGllbnRcRWRpdC5jc2h0bWw=
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Dish/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzaC9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/DishIngredient/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaEluZ3JlZGllbnRcSW5kZXguY3NodG1s
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Dish/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzaC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/DishTag/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaFRhZ1xDcmVhdGUuY3NodG1s
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/DishIngredient/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzaEluZ3JlZGllbnQvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/DishTag/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaFRhZ1xEZWxldGUuY3NodG1s
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/DishIngredient/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzaEluZ3JlZGllbnQvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/DishTag/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaFRhZ1xEZXRhaWxzLmNzaHRtbA==
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/DishIngredient/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzaEluZ3JlZGllbnQvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/DishTag/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaFRhZ1xFZGl0LmNzaHRtbA==
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/DishIngredient/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzaEluZ3JlZGllbnQvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/DishTag/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaFRhZ1xJbmRleC5jc2h0bWw=
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/DishIngredient/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzaEluZ3JlZGllbnQvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Dish/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaFxDcmVhdGUuY3NodG1s
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/DishTag/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzaFRhZy9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Dish/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaFxEZWxldGUuY3NodG1s
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/DishTag/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzaFRhZy9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Dish/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaFxEZXRhaWxzLmNzaHRtbA==
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/DishTag/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzaFRhZy9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Dish/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaFxFZGl0LmNzaHRtbA==
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/DishTag/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzaFRhZy9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Dish/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGlzaFxJbmRleC5jc2h0bWw=
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/DishTag/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGlzaFRhZy9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Ingredient/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVkaWVudFxDcmVhdGUuY3NodG1s
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Ingredient/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5ncmVkaWVudC9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Ingredient/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVkaWVudFxEZWxldGUuY3NodG1s
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Ingredient/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5ncmVkaWVudC9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Ingredient/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVkaWVudFxEZXRhaWxzLmNzaHRtbA==
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Ingredient/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5ncmVkaWVudC9EZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Ingredient/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVkaWVudFxFZGl0LmNzaHRtbA==
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Ingredient/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5ncmVkaWVudC9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Ingredient/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5ncmVkaWVudFxJbmRleC5jc2h0bWw=
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Ingredient/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSW5ncmVkaWVudC9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Shared/_LoginPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Tag/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnXENyZWF0ZS5jc2h0bWw=
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Tag/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGFnL0NyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Tag/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnXERlbGV0ZS5jc2h0bWw=
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Tag/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGFnL0RlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Tag/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnXERldGFpbHMuY3NodG1s
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Tag/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGFnL0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Tag/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnXEVkaXQuY3NodG1s
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Tag/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGFnL0VkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Tag/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGFnXEluZGV4LmNzaHRtbA==
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Tag/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGFnL0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/TestDish/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdERpc2hcQ3JlYXRlLmNzaHRtbA==
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/TestDish/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVzdERpc2gvQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/TestDish/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdERpc2hcRGVsZXRlLmNzaHRtbA==
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/TestDish/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVzdERpc2gvRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/TestDish/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdERpc2hcRGV0YWlscy5jc2h0bWw=
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/TestDish/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVzdERpc2gvRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/TestDish/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdERpc2hcRWRpdC5jc2h0bWw=
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/TestDish/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVzdERpc2gvRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/TestDish/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdERpc2hcSW5kZXguY3NodG1s
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/TestDish/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGVzdERpc2gvSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/REPOS/Licencjat2024/Licencjat/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-4a3wbezk2p
+[/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-jdnzpkijh5

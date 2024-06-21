@@ -46,7 +46,7 @@ namespace Licencjat.Controllers
         }
 
         // GET: Tag/Create
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         public IActionResult Create()
         {
             return View();
@@ -57,6 +57,7 @@ namespace Licencjat.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Create([Bind("Id,Name")] Tag tag)
         {
             if (ModelState.IsValid)
@@ -69,7 +70,7 @@ namespace Licencjat.Controllers
         }
 
         // GET: Tag/Edit/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -90,6 +91,7 @@ namespace Licencjat.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Administrator")]
         
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Tag tag)
         {
@@ -122,7 +124,7 @@ namespace Licencjat.Controllers
         }
 
         // GET: Tag/Delete/5
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)

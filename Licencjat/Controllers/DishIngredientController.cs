@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Licencjat.Data;
 using Licencjat.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Licencjat.Controllers
 {
+    [Authorize(Roles = "Administrator")]
     public class DishIngredientController : Controller
     {
         private readonly ApplicationDbContext _context;
