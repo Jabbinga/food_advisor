@@ -20,15 +20,41 @@ namespace Licencjat.Controllers
         }
 
         // GET: Dish
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString, string sortOrder)
         {
-            var dishes = await _context.Dish
-                .Include(d => d.DishTags)
-                .ThenInclude(dt => dt.Tag)
-                .Include(d => d.DishIngredients)
-                .ThenInclude(di => di.Ingredient)
-                .ToListAsync();
-            return View(dishes);
+            ViewData["CurrentFilter"] = searchString;
+            ViewData["NameSortParam"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["KcalSortParam"] = sortOrder == "Kcal" ? "kcal_desc" : "Kcal";
+
+            var dishes = from d in _context.Dish
+                    .Include(d => d.DishTags)
+                    .ThenInclude(dt => dt.Tag)
+                    .Include(d => d.DishIngredients)
+                    .ThenInclude(di => di.Ingredient)
+                select d;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                dishes = dishes.Where(d => d.Name.ToLower().Contains(searchString.ToLower()));
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    dishes = dishes.OrderByDescending(d => d.Name);
+                    break;
+                case "Kcal":
+                    dishes = dishes.OrderBy(d => d.Kcal);
+                    break;
+                case "kcal_desc":
+                    dishes = dishes.OrderByDescending(d => d.Kcal);
+                    break;
+                default:
+                    dishes = dishes.OrderBy(d => d.Name);
+                    break;
+            }
+
+            return View(await dishes.ToListAsync());
         }
 
         // GET: Dish/Details/5
