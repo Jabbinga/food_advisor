@@ -21,62 +21,82 @@ namespace Licencjat.Controllers
         }
 
         // GET: Dish
-        public async Task<IActionResult> Index(string searchString, string sortOrder, int? tagId)
-        {
-            ViewData["CurrentFilter"] = searchString;
-            ViewData["CurrentTag"] = tagId;
-            ViewData["NameSortParam"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewData["KcalSortParam"] = sortOrder == "Kcal" ? "kcal_desc" : "Kcal";
+       public async Task<IActionResult> Index(string searchString, string sortOrder, int? tagId)
+{
+    ViewData["CurrentFilter"] = searchString;
+    ViewData["CurrentTag"] = tagId;
 
-            var dishes = from d in _context.Dish
-                    .Include(d => d.DishTags)
-                    .ThenInclude(dt => dt.Tag)
-                    .Include(d => d.DishIngredients)
-                    .ThenInclude(di => di.Ingredient)
-                select d;
+    // Fetch dishes without sorting
+    var dishes = from d in _context.Dish
+                 .Include(d => d.DishTags)
+                 .ThenInclude(dt => dt.Tag)
+                 .Include(d => d.DishIngredients)
+                 .ThenInclude(di => di.Ingredient)
+                 select d;
 
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                dishes = dishes.Where(d => d.Name.ToLower().Contains(searchString.ToLower()));
-            }
+    if (!String.IsNullOrEmpty(searchString))
+    {
+        dishes = dishes.Where(d => d.Name.ToLower().Contains(searchString.ToLower()));
+    }
 
-            if (tagId.HasValue)
-            {
-                dishes = dishes.Where(d => d.DishTags.Any(dt => dt.TagId == tagId));
-            }
+    // Pass data for view
+    ViewData["Tags"] = new SelectList(_context.Tag, "Id", "Name");
+    ViewData["SelectedTagName"] = tagId.HasValue ?
+        (await _context.Tag.FindAsync(tagId.Value))?.Name ?? "All Tags" :
+        "All Tags";
 
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    dishes = dishes.OrderByDescending(d => d.Name);
-                    break;
-                case "Kcal":
-                    dishes = dishes.OrderBy(d => d.Kcal);
-                    break;
-                case "kcal_desc":
-                    dishes = dishes.OrderByDescending(d => d.Kcal);
-                    break;
-                default:
-                    dishes = dishes.OrderBy(d => d.Name);
-                    break;
-            }
+    return View(await dishes.ToListAsync());
+}
 
-            // Get all tags for the dropdown
-            ViewData["Tags"] = new SelectList(_context.Tag, "Id", "Name");
+[HttpPost]
+public async Task<IActionResult> Sort(string searchString, string sortOrder, int? tagId)
+{
+    // Handle sorting logic here
+    var dishes = from d in _context.Dish
+                 .Include(d => d.DishTags)
+                 .ThenInclude(dt => dt.Tag)
+                 .Include(d => d.DishIngredients)
+                 .ThenInclude(di => di.Ingredient)
+                 select d;
 
-            // Get the selected tag name
-            if (tagId.HasValue)
-            {
-                var selectedTag = await _context.Tag.FindAsync(tagId.Value);
-                ViewData["SelectedTagName"] = selectedTag?.Name;
-            }
-            else
-            {
-                ViewData["SelectedTagName"] = "All Tags";
-            }
+    if (!String.IsNullOrEmpty(searchString))
+    {
+        dishes = dishes.Where(d => d.Name.ToLower().Contains(searchString.ToLower()));
+    }
 
-            return View(await dishes.ToListAsync());
-        }
+    if (tagId.HasValue)
+    {
+        dishes = dishes.Where(d => d.DishTags.Any(dt => dt.TagId == tagId));
+    }
+
+    switch (sortOrder)
+    {
+        case "name_desc":
+            dishes = dishes.OrderByDescending(d => d.Name);
+            break;
+        case "Kcal":
+            dishes = dishes.OrderBy(d => d.Kcal);
+            break;
+        case "kcal_desc":
+            dishes = dishes.OrderByDescending(d => d.Kcal);
+            break;
+        default:
+            dishes = dishes.OrderBy(d => d.Name);
+            break;
+    }
+
+    ViewData["CurrentFilter"] = searchString;
+    ViewData["CurrentTag"] = tagId;
+    ViewData["NameSortParam"] = sortOrder == "name_desc" ? "name_desc" : "";
+    ViewData["KcalSortParam"] = sortOrder == "Kcal" ? "Kcal" : "kcal_desc";
+
+    ViewData["Tags"] = new SelectList(_context.Tag, "Id", "Name");
+
+    var selectedTag = await _context.Tag.FindAsync(tagId.GetValueOrDefault());
+    ViewData["SelectedTagName"] = selectedTag?.Name ?? "All Tags";
+
+    return View("Index", await dishes.ToListAsync());
+}
 
 
         // GET: Dish/Details/5
