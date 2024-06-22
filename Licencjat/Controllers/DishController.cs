@@ -21,9 +21,10 @@ namespace Licencjat.Controllers
         }
 
         // GET: Dish
-        public async Task<IActionResult> Index(string searchString, string sortOrder)
+        public async Task<IActionResult> Index(string searchString, string sortOrder, int? tagId)
         {
             ViewData["CurrentFilter"] = searchString;
+            ViewData["CurrentTag"] = tagId;
             ViewData["NameSortParam"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewData["KcalSortParam"] = sortOrder == "Kcal" ? "kcal_desc" : "Kcal";
 
@@ -37,6 +38,11 @@ namespace Licencjat.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 dishes = dishes.Where(d => d.Name.ToLower().Contains(searchString.ToLower()));
+            }
+
+            if (tagId.HasValue)
+            {
+                dishes = dishes.Where(d => d.DishTags.Any(dt => dt.TagId == tagId));
             }
 
             switch (sortOrder)
@@ -55,8 +61,23 @@ namespace Licencjat.Controllers
                     break;
             }
 
+            // Get all tags for the dropdown
+            ViewData["Tags"] = new SelectList(_context.Tag, "Id", "Name");
+
+            // Get the selected tag name
+            if (tagId.HasValue)
+            {
+                var selectedTag = await _context.Tag.FindAsync(tagId.Value);
+                ViewData["SelectedTagName"] = selectedTag?.Name;
+            }
+            else
+            {
+                ViewData["SelectedTagName"] = "All Tags";
+            }
+
             return View(await dishes.ToListAsync());
         }
+
 
         // GET: Dish/Details/5
         public async Task<IActionResult> Details(int? id)

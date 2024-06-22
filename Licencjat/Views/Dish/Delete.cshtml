@@ -29,7 +29,7 @@
         <dd class="col-sm-10">
             @if (!string.IsNullOrEmpty(Model.ImagePath))
             {
-            <img src="@Model.ImagePath" alt="@Model.Name" width="200" />
+                <img src="@Model.ImagePath" alt="@Model.Name" width="200" />
             }
         </dd>
         <dt class="col-sm-2">
@@ -38,7 +38,7 @@
         <dd class="col-sm-10">
             @foreach (var dishTag in Model.DishTags)
             {
-            <span>@dishTag.Tag.Name</span><br />
+                <span>@dishTag.Tag.Name</span><br />
             }
         </dd>
         <dt class="col-sm-2">
@@ -47,8 +47,13 @@
         <dd class="col-sm-10">
             @foreach (var dishIngredient in Model.DishIngredients)
             {
-            <span>@dishIngredient.Ingredient.Name (@dishIngredient.Ingredient.Kcal Kcal/100g)</span><br />
+                <span>@dishIngredient.Ingredient.Name (@dishIngredient.Ingredient.Kcal Kcal/100g)</span><br />
             }
         </dd>
     </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
 </div>

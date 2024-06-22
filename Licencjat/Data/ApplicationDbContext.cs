@@ -30,7 +30,8 @@ public class ApplicationDbContext : IdentityDbContext
         modelBuilder.Entity<DishTag>()
             .HasOne(dt => dt.Dish)
             .WithMany(d => d.DishTags)
-            .HasForeignKey(dt => dt.DishId);
+            .HasForeignKey(dt => dt.DishId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<DishTag>()
             .HasOne(dt => dt.Tag)
@@ -43,7 +44,8 @@ public class ApplicationDbContext : IdentityDbContext
         modelBuilder.Entity<DishIngredient>()
             .HasOne(di => di.Dish)
             .WithMany(d => d.DishIngredients)
-            .HasForeignKey(di => di.DishId);
+            .HasForeignKey(di => di.DishId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<DishIngredient>()
             .HasOne(di => di.Ingredient)
