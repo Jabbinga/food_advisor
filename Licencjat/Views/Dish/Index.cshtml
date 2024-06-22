@@ -12,7 +12,7 @@ ViewData["Title"] = "Dishes";
     
     <form asp-action="Sort" method="post" class="form-inline">
         <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" class="form-control mr-2" placeholder="Search dishes..." />
-        <input type="submit" value="Search" class="btn btn-primary mr-2" />
+        
 
         <select name="sortOrder" class="form-control mr-2">
             <option value="">Sort By</option>
