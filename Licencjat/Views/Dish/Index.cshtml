@@ -10,19 +10,21 @@ ViewData["Title"] = "Dishes";
         <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" class="form-control mr-2" placeholder="Search dishes..." />
 
         <select name="sortOrder" class="form-control mr-2">
-            <option value="">Sort By</option>
+            
             <option value="Name" selected="@((string)ViewData["CurrentSort"] == "Name" ? "selected" : "")">Name (A-Z)</option>
             <option value="name_desc" selected="@((string)ViewData["CurrentSort"] == "name_desc" ? "selected" : "")">Name (Z-A)</option>
             <option value="Kcal" selected="@((string)ViewData["CurrentSort"] == "Kcal" ? "selected" : "")">Kcal (Low-High)</option>
             <option value="kcal_desc" selected="@((string)ViewData["CurrentSort"] == "kcal_desc" ? "selected" : "")">Kcal (High-Low)</option>
+            <option value="" selected="True">Sort By</option>
         </select>
 
         <select name="tagId" class="form-control mr-2">
-            <option value="">All Tags</option>
+            
             @foreach (var tag in ViewData["Tags"] as SelectList)
             {
             <option value="@tag.Value" selected="@(ViewData["CurrentTag"] != null && (int)ViewData["CurrentTag"] == int.Parse(tag.Value) ? "selected" : "")">@tag.Text</option>
             }
+            <option value="" selected="True">All Tags</option>
         </select>
 
         <button type="submit" class="btn btn-primary">Sort & Search</button>
