@@ -41,35 +41,99 @@ ViewData["Title"] = "Dishes";
 <div class="row">
     @foreach (var dish in Model)
     {
-    <div class="col-md-3 mb-4">
-        <div class="card h-100">
-            @if (!string.IsNullOrEmpty(dish.ImagePath))
-            {
-            <img class="card-img-top" src="@dish.ImagePath" alt="@dish.Name" />
-            }
-            <div class="card-body">
-                <h5 class="card-title"><a asp-action="Details" asp-route-id="@dish.Id">@dish.Name</a></h5>
-                <p class="card-text">@dish.Kcal Kcal</p>
-                <p class="card-text">
-                    <strong>Tags:</strong><br />
-                    @foreach (var dishTag in dish.DishTags)
-                    {
-                    <span>@dishTag.Tag.Name</span><br />
-                    }
-                </p>
-                <p class="card-text">
-                    <strong>Ingredients:</strong><br />
-                    @foreach (var dishIngredient in dish.DishIngredients)
-                    {
-                    <span>@dishIngredient.Ingredient.Name (@dishIngredient.Ingredient.Kcal Kcal/100g)</span><br />
-                    }
-                </p>
+        <div class="col-md-3 mb-4">
+            <div class="card h-100">
+                @if (!string.IsNullOrEmpty(dish.ImagePath))
+                {
+                    <img class="card-img-top" src="@dish.ImagePath" alt="@dish.Name" />
+                }
+                <div class="card-body">
+                    <h5 class="card-title"><a asp-action="Details" asp-route-id="@dish.Id">@dish.Name</a></h5>
+                    <p class="card-text">@dish.Kcal Kcal</p>
+                    <p class="card-text">
+                        <strong>Tags:</strong><br />
+                        @foreach (var dishTag in dish.DishTags)
+                        {
+                            <span>@dishTag.Tag.Name</span><br />
+                        }
+                    </p>
+                    <p class="card-text">
+                        <strong>Ingredients:</strong><br />
+                        @foreach (var dishIngredient in dish.DishIngredients)
+                        {
+                            <span>@dishIngredient.Ingredient.Name (@dishIngredient.Ingredient.Kcal Kcal/100g)</span><br />
+                        }
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <!-- Each "Edit" button -->
+                    <button type="button" class="btn btn-primary edit-dish-btn" data-toggle="modal" data-target="#editModal" data-id="@dish.Id">
+                        Edit Dish
+                    </button>
+                    <a asp-action="Delete" asp-route-id="@dish.Id" class="btn btn-sm btn-danger">Delete</a>
+                </div>
             </div>
-            <div class="card-footer">
-                <a asp-action="Edit" asp-route-id="@dish.Id" class="btn btn-sm btn-primary">Edit</a>
-                <a asp-action="Delete" asp-route-id="@dish.Id" class="btn btn-sm btn-danger">Delete</a>
+        </div>
+    }
+</div>
+
+
+<script>
+    $(document).ready(function(){
+        $('#editModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var id = button.data('id'); // Extract info from data-* attributes
+            var modal = $(this);
+
+            // Use jQuery to fetch the form via Ajax
+            $.ajax({
+                url: '@Url.Action("Edit", "Dish")', // Replace with your actual controller
+                type: 'GET',
+                data: { id: id },
+                success: function (result) {
+                    $('#editModalBody').html(result);
+                }
+            });
+        });
+
+        // Handle form submission
+        $(document).on('submit', '#editForm', function (e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                url: $(this).attr('action'),
+                type: $(this).attr('method'),
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response.success) {
+                        $('#editModal').modal('hide');
+                        location.reload(); // Reload the page or update the necessary part of your page
+                    } else {
+                        $('#editModalBody').html(response);
+                    }
+                }
+            });
+        });
+    });
+</script>
+
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit Dish</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="editModalBody">
+                    <!-- Form content will be loaded here via Ajax -->
+                </div>
             </div>
         </div>
     </div>
-    }
 </div>

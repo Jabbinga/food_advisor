@@ -1,42 +1,65 @@
-@model Licencjat.Models.Dish
-
-@{
-    ViewData["Title"] = "Edit";
-}
-
-<h1>Edit</h1>
-
-<h4>Dish</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit" enctype="multipart/form-data">
-            <div class="form-horizontal">
-                <hr />
-                <input type="hidden" asp-for="Id" />
-                <div class="form-group">
-                    <label asp-for="Name" class="control-label"></label>
-                    <input asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="Kcal" class="control-label"></label>
-                    <input asp-for="Kcal" class="form-control" />
-                    <span asp-validation-for="Kcal" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label for="imageFile" class="control-label">Image</label>
-                    <input type="file" name="imageFile" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Save" class="btn btn-primary" />
+<!-- Modal Structure -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit Dish</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="editModalBody">
+                    <!-- Form content will be loaded here via Ajax -->
                 </div>
             </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+@section Scripts {
+<script>
+    $(document).ready(function(){
+        // Trigger modal and load form via Ajax
+        $('.edit-dish-btn').on('click', function () {
+            var id = $(this).data('id');
+            $.ajax({
+                url: '@Url.Action("Edit", "Dish")',
+                type: 'GET',
+                data: { id: id },
+                success: function (result) {
+                    $('#editModalBody').html(result);
+                    $('#editModal').modal('show');
+                },
+                error: function(xhr, status, error) {
+                    console.error('Ajax request failed: ' + status + ', ' + error);
+                }
+            });
+        });
 
+        // Handle form submission
+        $(document).on('submit', '#editForm', function (e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            $.ajax({
+                url: $(this).attr('action'),
+                type: $(this).attr('method'),
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    if (response.success) {
+                        $('#editModal').modal('hide');
+                        location.reload(); // Refresh page after successful edit
+                    } else {
+                        $('#editModalBody').html(response);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    console.error('Form submission failed: ' + status + ', ' + error);
+                }
+            });
+        });
+    });
+</script>
+}

@@ -1,26 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Licencjat.csproj": {}
+    "D:\\REPOS\\Licencjat2024\\Licencjat\\Licencjat.csproj": {}
   },
   "projects": {
-    "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Licencjat.csproj": {
+    "D:\\REPOS\\Licencjat2024\\Licencjat\\Licencjat.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Licencjat.csproj",
+        "projectUniqueName": "D:\\REPOS\\Licencjat2024\\Licencjat\\Licencjat.csproj",
         "projectName": "Licencjat",
-        "projectPath": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/Licencjat.csproj",
-        "packagesPath": "/Users/natproview/.nuget/packages/",
-        "outputPath": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/obj/",
+        "projectPath": "D:\\REPOS\\Licencjat2024\\Licencjat\\Licencjat.csproj",
+        "packagesPath": "C:\\Users\\Mikul\\.nuget\\packages\\",
+        "outputPath": "D:\\REPOS\\Licencjat2024\\Licencjat\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/natproview/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Mikul\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://www.nuget.org/api/v2/": {}
         },
         "frameworks": {
           "net8.0": {
@@ -86,7 +88,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files (x86)\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

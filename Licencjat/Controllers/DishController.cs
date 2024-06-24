@@ -169,7 +169,7 @@ public async Task<IActionResult> Sort(string searchString, string sortOrder, int
             {
                 return NotFound();
             }
-            return View(dish);
+            return PartialView("_EditPartial", dish); // Return partial view
         }
 
         // POST: Dish/Edit/5
@@ -215,9 +215,9 @@ public async Task<IActionResult> Sort(string searchString, string sortOrder, int
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return Json(new { success = true });
             }
-            return View(dish);
+            return PartialView("_EditPartial", dish);
         }
 
         // GET: Dish/Delete/5
