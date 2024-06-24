@@ -21,82 +21,82 @@ namespace Licencjat.Controllers
         }
 
         // GET: Dish
-        public async Task<IActionResult> Index(string searchString, string sortOrder, int? tagId)
-        {
-            ViewData["CurrentFilter"] = searchString;
-            ViewData["CurrentTag"] = tagId;
+       public async Task<IActionResult> Index(string searchString, string sortOrder, int? tagId)
+{
+    ViewData["CurrentFilter"] = searchString;
+    ViewData["CurrentTag"] = tagId;
 
-            // Fetch dishes without sorting
-            var dishes = from d in _context.Dish
-                    .Include(d => d.DishTags)
-                    .ThenInclude(dt => dt.Tag)
-                    .Include(d => d.DishIngredients)
-                    .ThenInclude(di => di.Ingredient)
-                select d;
+    // Fetch dishes without sorting
+    var dishes = from d in _context.Dish
+                 .Include(d => d.DishTags)
+                 .ThenInclude(dt => dt.Tag)
+                 .Include(d => d.DishIngredients)
+                 .ThenInclude(di => di.Ingredient)
+                 select d;
 
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                dishes = dishes.Where(d => d.Name.ToLower().Contains(searchString.ToLower()));
-            }
+    if (!String.IsNullOrEmpty(searchString))
+    {
+        dishes = dishes.Where(d => d.Name.ToLower().Contains(searchString.ToLower()));
+    }
 
-            // Pass data for view
-            ViewData["Tags"] = new SelectList(_context.Tag, "Id", "Name");
-            ViewData["SelectedTagName"] = tagId.HasValue
-                ? (await _context.Tag.FindAsync(tagId.Value))?.Name ?? "All Tags"
-                : "All Tags";
+    // Pass data for view
+    ViewData["Tags"] = new SelectList(_context.Tag, "Id", "Name");
+    ViewData["SelectedTagName"] = tagId.HasValue ?
+        (await _context.Tag.FindAsync(tagId.Value))?.Name ?? "All Tags" :
+        "All Tags";
 
-            return View(await dishes.ToListAsync());
-        }
+    return View(await dishes.ToListAsync());
+}
 
-        [HttpPost]
-        public async Task<IActionResult> Sort(string searchString, string sortOrder, int? tagId)
-        {
-            // Handle sorting logic here
-            var dishes = from d in _context.Dish
-                    .Include(d => d.DishTags)
-                    .ThenInclude(dt => dt.Tag)
-                    .Include(d => d.DishIngredients)
-                    .ThenInclude(di => di.Ingredient)
-                select d;
+[HttpPost]
+public async Task<IActionResult> Sort(string searchString, string sortOrder, int? tagId)
+{
+    // Handle sorting logic here
+    var dishes = from d in _context.Dish
+                 .Include(d => d.DishTags)
+                 .ThenInclude(dt => dt.Tag)
+                 .Include(d => d.DishIngredients)
+                 .ThenInclude(di => di.Ingredient)
+                 select d;
 
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                dishes = dishes.Where(d => d.Name.ToLower().Contains(searchString.ToLower()));
-            }
+    if (!String.IsNullOrEmpty(searchString))
+    {
+        dishes = dishes.Where(d => d.Name.ToLower().Contains(searchString.ToLower()));
+    }
 
-            if (tagId.HasValue)
-            {
-                dishes = dishes.Where(d => d.DishTags.Any(dt => dt.TagId == tagId));
-            }
+    if (tagId.HasValue)
+    {
+        dishes = dishes.Where(d => d.DishTags.Any(dt => dt.TagId == tagId));
+    }
 
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    dishes = dishes.OrderByDescending(d => d.Name);
-                    break;
-                case "Kcal":
-                    dishes = dishes.OrderBy(d => d.Kcal);
-                    break;
-                case "kcal_desc":
-                    dishes = dishes.OrderByDescending(d => d.Kcal);
-                    break;
-                default:
-                    dishes = dishes.OrderBy(d => d.Name);
-                    break;
-            }
+    switch (sortOrder)
+    {
+        case "name_desc":
+            dishes = dishes.OrderByDescending(d => d.Name);
+            break;
+        case "Kcal":
+            dishes = dishes.OrderBy(d => d.Kcal);
+            break;
+        case "kcal_desc":
+            dishes = dishes.OrderByDescending(d => d.Kcal);
+            break;
+        default:
+            dishes = dishes.OrderBy(d => d.Name);
+            break;
+    }
 
-            ViewData["CurrentFilter"] = searchString;
-            ViewData["CurrentTag"] = tagId;
-            ViewData["NameSortParam"] = sortOrder == "name_desc" ? "name_desc" : "";
-            ViewData["KcalSortParam"] = sortOrder == "Kcal" ? "Kcal" : "kcal_desc";
+    ViewData["CurrentFilter"] = searchString;
+    ViewData["CurrentTag"] = tagId;
+    ViewData["NameSortParam"] = sortOrder == "name_desc" ? "name_desc" : "";
+    ViewData["KcalSortParam"] = sortOrder == "Kcal" ? "Kcal" : "kcal_desc";
 
-            ViewData["Tags"] = new SelectList(_context.Tag, "Id", "Name");
+    ViewData["Tags"] = new SelectList(_context.Tag, "Id", "Name");
 
-            var selectedTag = await _context.Tag.FindAsync(tagId.GetValueOrDefault());
-            ViewData["SelectedTagName"] = selectedTag?.Name ?? "All Tags";
+    var selectedTag = await _context.Tag.FindAsync(tagId.GetValueOrDefault());
+    ViewData["SelectedTagName"] = selectedTag?.Name ?? "All Tags";
 
-            return View("Index", await dishes.ToListAsync());
-        }
+    return View("Index", await dishes.ToListAsync());
+}
 
 
         // GET: Dish/Details/5
@@ -126,8 +126,7 @@ namespace Licencjat.Controllers
         {
             var viewModel = new DishCreateViewModel
             {
-                Ingredients = _context.Ingredients.ToList(),
-                Tags = _context.Tag.ToList()
+                Ingredients = _context.Ingredients.ToList()
             };
             return PartialView("_CreatePartial", viewModel);
         }
@@ -149,8 +148,7 @@ namespace Licencjat.Controllers
 
                 if (imageFile != null)
                 {
-                    string uniqueFileName = Path.GetFileNameWithoutExtension(imageFile.FileName) + "_" +
-                                            Guid.NewGuid() + Path.GetExtension(imageFile.FileName);
+                    string uniqueFileName = Path.GetFileNameWithoutExtension(imageFile.FileName) + "_" + Guid.NewGuid() + Path.GetExtension(imageFile.FileName);
                     string filePath = Path.Combine("wwwroot/images", uniqueFileName);
 
                     using (var stream = new FileStream(filePath, FileMode.Create))
@@ -168,20 +166,8 @@ namespace Licencjat.Controllers
                 {
                     foreach (var ingredientId in viewModel.SelectedIngredients)
                     {
-                        _context.DishIngredient.Add(
-                            new DishIngredient { DishId = dish.Id, IngredientId = ingredientId });
+                        _context.DishIngredient.Add(new DishIngredient { DishId = dish.Id, IngredientId = ingredientId });
                     }
-
-                    await _context.SaveChangesAsync();
-                }
-
-                if (viewModel.SelectedTags != null && viewModel.SelectedTags.Any())
-                {
-                    foreach (var tagId in viewModel.SelectedTags)
-                    {
-                        _context.DishTags.Add(new DishTag { DishId = dish.Id, TagId = tagId });
-                    }
-
                     await _context.SaveChangesAsync();
                 }
 
@@ -189,10 +175,9 @@ namespace Licencjat.Controllers
             }
 
             viewModel.Ingredients = _context.Ingredients.ToList();
-            viewModel.Tags = _context.Tag.ToList();
             return PartialView("_CreatePartial", viewModel);
         }
-
+        
         // GET: Dish/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -206,7 +191,6 @@ namespace Licencjat.Controllers
             {
                 return NotFound();
             }
-
             return PartialView("_EditPartial", dish); // Return partial view
         }
 
@@ -228,8 +212,7 @@ namespace Licencjat.Controllers
                 {
                     if (imageFile != null)
                     {
-                        string uniqueFileName = Path.GetFileNameWithoutExtension(imageFile.FileName) + "_" +
-                                                Guid.NewGuid() + Path.GetExtension(imageFile.FileName);
+                        string uniqueFileName = Path.GetFileNameWithoutExtension(imageFile.FileName) + "_" + Guid.NewGuid() + Path.GetExtension(imageFile.FileName);
                         string filePath = Path.Combine("wwwroot/images", uniqueFileName);
 
                         using (var stream = new FileStream(filePath, FileMode.Create))
@@ -254,10 +237,8 @@ namespace Licencjat.Controllers
                         throw;
                     }
                 }
-
                 return Json(new { success = true });
             }
-
             return PartialView("_EditPartial", dish);
         }
 
@@ -279,7 +260,6 @@ namespace Licencjat.Controllers
 
             return View(dish);
         }
-
         [Authorize(Roles = "Administrator")]
         // POST: Dish/Delete/5
         [HttpPost, ActionName("Delete")]

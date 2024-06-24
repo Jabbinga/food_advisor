@@ -208,6 +208,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2023-06-9 o 16.02.06_ee10592a-cd5b-4331-94e3-21a96cd3e0cb.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2023-12-3 o 19.42.31_8d07cc81-342c-47cc-9f85-95c8359df87b.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Licencjat</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Licencjat</BasePath>
+      <RelativePath>images/Zrzut ekranu 2023-12-3 o 19.42.31_8d07cc81-342c-47cc-9f85-95c8359df87b.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2023-12-3 o 19.42.31_8d07cc81-342c-47cc-9f85-95c8359df87b.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-11 o 23.51.21_8a33170e-fec2-42ef-b2fa-3f106cc222bc.png))">
       <SourceType>Package</SourceType>
       <SourceId>Licencjat</SourceId>
@@ -240,6 +256,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-18 o 20.27.12_be0f16d0-b9d5-40f5-8db7-53ece7ca22c5.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-19 o 18.47.19_32023a99-ebc8-4c1f-8da6-2452a29593c3.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Licencjat</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Licencjat</BasePath>
+      <RelativePath>images/Zrzut ekranu 2024-06-19 o 18.47.19_32023a99-ebc8-4c1f-8da6-2452a29593c3.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-19 o 18.47.19_32023a99-ebc8-4c1f-8da6-2452a29593c3.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-21 o 15.06.27_7874928d-f64b-4698-8cac-b2c2e30b6592.png))">
       <SourceType>Package</SourceType>
       <SourceId>Licencjat</SourceId>
@@ -255,6 +287,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-21 o 15.06.27_7874928d-f64b-4698-8cac-b2c2e30b6592.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-21 o 15.06.27_99553ee9-a2cd-4350-a710-c372fa6e0227.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Licencjat</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Licencjat</BasePath>
+      <RelativePath>images/Zrzut ekranu 2024-06-21 o 15.06.27_99553ee9-a2cd-4350-a710-c372fa6e0227.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-21 o 15.06.27_99553ee9-a2cd-4350-a710-c372fa6e0227.png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-21 o 15.06.27_cc0bbc98-6340-4bc9-8b5b-38af6da45714.png))">
       <SourceType>Package</SourceType>
@@ -320,6 +368,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-21 o 15.42.48_cbb181f1-aa03-4825-be80-a64fb13a8c38.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-5 o 03.45.54_f76628cd-b885-47e3-bc9d-8ac413e3a24f.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Licencjat</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Licencjat</BasePath>
+      <RelativePath>images/Zrzut ekranu 2024-06-5 o 03.45.54_f76628cd-b885-47e3-bc9d-8ac413e3a24f.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-5 o 03.45.54_f76628cd-b885-47e3-bc9d-8ac413e3a24f.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-5 o 03.46.45_dbf47add-e6f5-4285-8ed3-2a6c0e3a5bc1.png))">
       <SourceType>Package</SourceType>
       <SourceId>Licencjat</SourceId>
@@ -335,6 +399,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-5 o 03.46.45_dbf47add-e6f5-4285-8ed3-2a6c0e3a5bc1.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-5 o 14.38.04_e71b73a8-0897-4716-81d4-4a0c3628c327.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Licencjat</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Licencjat</BasePath>
+      <RelativePath>images/Zrzut ekranu 2024-06-5 o 14.38.04_e71b73a8-0897-4716-81d4-4a0c3628c327.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-5 o 14.38.04_e71b73a8-0897-4716-81d4-4a0c3628c327.png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\js\site.js))">
       <SourceType>Package</SourceType>

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "61KCpkpv6xbi3T+9x84oswuR9JQeqU8QzHQefvamIGM=",
+  "Hash": "9IFFL3BK9lXmefrVD4Z6SPKS9yCVGfPTwfrrck13naY=",
   "Source": "Licencjat",
   "BasePath": "_content/Licencjat",
   "Mode": "Default",
@@ -1442,6 +1442,25 @@
       "OriginalItemSpec": "wwwroot/images/Zrzut ekranu 2023-06-9 o 16.02.06_ee10592a-cd5b-4331-94e3-21a96cd3e0cb.png"
     },
     {
+      "Identity": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/images/Zrzut ekranu 2023-12-3 o 19.42.31_8d07cc81-342c-47cc-9f85-95c8359df87b.png",
+      "SourceId": "Licencjat",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/",
+      "BasePath": "_content/Licencjat",
+      "RelativePath": "images/Zrzut ekranu 2023-12-3 o 19.42.31_8d07cc81-342c-47cc-9f85-95c8359df87b.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/Zrzut ekranu 2023-12-3 o 19.42.31_8d07cc81-342c-47cc-9f85-95c8359df87b.png"
+    },
+    {
       "Identity": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/images/Zrzut ekranu 2024-06-11 o 23.51.21_8a33170e-fec2-42ef-b2fa-3f106cc222bc.png",
       "SourceId": "Licencjat",
       "SourceType": "Discovered",
@@ -1480,6 +1499,25 @@
       "OriginalItemSpec": "wwwroot/images/Zrzut ekranu 2024-06-18 o 20.27.12_be0f16d0-b9d5-40f5-8db7-53ece7ca22c5.png"
     },
     {
+      "Identity": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/images/Zrzut ekranu 2024-06-19 o 18.47.19_32023a99-ebc8-4c1f-8da6-2452a29593c3.png",
+      "SourceId": "Licencjat",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/",
+      "BasePath": "_content/Licencjat",
+      "RelativePath": "images/Zrzut ekranu 2024-06-19 o 18.47.19_32023a99-ebc8-4c1f-8da6-2452a29593c3.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/Zrzut ekranu 2024-06-19 o 18.47.19_32023a99-ebc8-4c1f-8da6-2452a29593c3.png"
+    },
+    {
       "Identity": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/images/Zrzut ekranu 2024-06-21 o 15.06.27_7874928d-f64b-4698-8cac-b2c2e30b6592.png",
       "SourceId": "Licencjat",
       "SourceType": "Discovered",
@@ -1497,6 +1535,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/Zrzut ekranu 2024-06-21 o 15.06.27_7874928d-f64b-4698-8cac-b2c2e30b6592.png"
+    },
+    {
+      "Identity": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/images/Zrzut ekranu 2024-06-21 o 15.06.27_99553ee9-a2cd-4350-a710-c372fa6e0227.png",
+      "SourceId": "Licencjat",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/",
+      "BasePath": "_content/Licencjat",
+      "RelativePath": "images/Zrzut ekranu 2024-06-21 o 15.06.27_99553ee9-a2cd-4350-a710-c372fa6e0227.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/Zrzut ekranu 2024-06-21 o 15.06.27_99553ee9-a2cd-4350-a710-c372fa6e0227.png"
     },
     {
       "Identity": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/images/Zrzut ekranu 2024-06-21 o 15.06.27_cc0bbc98-6340-4bc9-8b5b-38af6da45714.png",
@@ -1575,6 +1632,25 @@
       "OriginalItemSpec": "wwwroot/images/Zrzut ekranu 2024-06-21 o 15.42.48_cbb181f1-aa03-4825-be80-a64fb13a8c38.png"
     },
     {
+      "Identity": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/images/Zrzut ekranu 2024-06-5 o 03.45.54_f76628cd-b885-47e3-bc9d-8ac413e3a24f.png",
+      "SourceId": "Licencjat",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/",
+      "BasePath": "_content/Licencjat",
+      "RelativePath": "images/Zrzut ekranu 2024-06-5 o 03.45.54_f76628cd-b885-47e3-bc9d-8ac413e3a24f.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/Zrzut ekranu 2024-06-5 o 03.45.54_f76628cd-b885-47e3-bc9d-8ac413e3a24f.png"
+    },
+    {
       "Identity": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/images/Zrzut ekranu 2024-06-5 o 03.46.45_dbf47add-e6f5-4285-8ed3-2a6c0e3a5bc1.png",
       "SourceId": "Licencjat",
       "SourceType": "Discovered",
@@ -1592,6 +1668,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/Zrzut ekranu 2024-06-5 o 03.46.45_dbf47add-e6f5-4285-8ed3-2a6c0e3a5bc1.png"
+    },
+    {
+      "Identity": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/images/Zrzut ekranu 2024-06-5 o 14.38.04_e71b73a8-0897-4716-81d4-4a0c3628c327.png",
+      "SourceId": "Licencjat",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/",
+      "BasePath": "_content/Licencjat",
+      "RelativePath": "images/Zrzut ekranu 2024-06-5 o 14.38.04_e71b73a8-0897-4716-81d4-4a0c3628c327.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/Zrzut ekranu 2024-06-5 o 14.38.04_e71b73a8-0897-4716-81d4-4a0c3628c327.png"
     },
     {
       "Identity": "/Users/natproview/RiderProjects/new/Licencjat/Licencjat/wwwroot/js/site.js",
