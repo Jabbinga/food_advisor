@@ -197,61 +197,116 @@ public async Task<IActionResult> Sort(string searchString, string sortOrder, int
                 return NotFound();
             }
 
-            var dish = await _context.Dish.FindAsync(id);
+            var dish = await _context.Dish
+                .Include(d => d.DishIngredients)
+                .ThenInclude(di => di.Ingredient)
+                .Include(d => d.DishTags)
+                .ThenInclude(dt => dt.Tag)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
             if (dish == null)
             {
                 return NotFound();
             }
-            return PartialView("_EditPartial", dish); // Return partial view
+
+            var viewModel = new DishCreateViewModel
+            {
+                Id = dish.Id,
+                Name = dish.Name,
+                Kcal = dish.Kcal,
+                ImagePath = dish.ImagePath,
+                SelectedIngredients = dish.DishIngredients.Select(di => di.IngredientId).ToList(),
+                SelectedTags = dish.DishTags.Select(dt => dt.TagId).ToList(),
+                Ingredients = _context.Ingredients.ToList(),
+                Tags = _context.Tag.ToList()
+            };
+
+            return PartialView("_EditPartial", viewModel);
         }
 
         // POST: Dish/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Kcal,ImagePath")] Dish dish, IFormFile imageFile)
+[HttpPost]
+[ValidateAntiForgeryToken]
+public async Task<IActionResult> Edit(int id, DishCreateViewModel viewModel, IFormFile imageFile)
+{
+    if (id != viewModel.Id)
+    {
+        return NotFound();
+    }
+
+    if (ModelState.IsValid)
+    {
+        try
         {
-            if (id != dish.Id)
+            var dish = await _context.Dish
+                .Include(d => d.DishIngredients)
+                .Include(d => d.DishTags)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (dish == null)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            dish.Name = viewModel.Name;
+            dish.Kcal = viewModel.Kcal;
+
+            if (imageFile != null && imageFile.Length > 0)
             {
-                try
+                string uniqueFileName = Path.GetFileNameWithoutExtension(imageFile.FileName) + "_" + Guid.NewGuid() + Path.GetExtension(imageFile.FileName);
+                string filePath = Path.Combine("wwwroot/images", uniqueFileName);
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
                 {
-                    if (imageFile != null)
-                    {
-                        string uniqueFileName = Path.GetFileNameWithoutExtension(imageFile.FileName) + "_" + Guid.NewGuid() + Path.GetExtension(imageFile.FileName);
-                        string filePath = Path.Combine("wwwroot/images", uniqueFileName);
-
-                        using (var stream = new FileStream(filePath, FileMode.Create))
-                        {
-                            await imageFile.CopyToAsync(stream);
-                        }
-
-                        dish.ImagePath = "/images/" + uniqueFileName;
-                    }
-
-                    _context.Update(dish);
-                    await _context.SaveChangesAsync();
+                    await imageFile.CopyToAsync(stream);
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!DishExists(dish.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return Json(new { success = true });
+
+                dish.ImagePath = "/images/" + uniqueFileName;
             }
-            return PartialView("_EditPartial", dish);
+
+            // Update ingredients and tags
+            _context.DishIngredient.RemoveRange(dish.DishIngredients);
+            _context.DishTags.RemoveRange(dish.DishTags);
+
+            if (viewModel.SelectedIngredients != null && viewModel.SelectedIngredients.Any())
+            {
+                foreach (var ingredientId in viewModel.SelectedIngredients)
+                {
+                    _context.DishIngredient.Add(new DishIngredient { DishId = dish.Id, IngredientId = ingredientId });
+                }
+            }
+
+            if (viewModel.SelectedTags != null && viewModel.SelectedTags.Any())
+            {
+                foreach (var tagId in viewModel.SelectedTags)
+                {
+                    _context.DishTags.Add(new DishTag { DishId = dish.Id, TagId = tagId });
+                }
+            }
+
+            _context.Update(dish);
+            await _context.SaveChangesAsync();
+            return Json(new { success = true });
         }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!DishExists(viewModel.Id))
+            {
+                return NotFound();
+            }
+            else
+            {
+                throw;
+            }
+        }
+    }
+
+    viewModel.Ingredients = _context.Ingredients.ToList();
+    viewModel.Tags = _context.Tag.ToList();
+    return PartialView("_EditPartial", viewModel);
+}
 
         // GET: Dish/Delete/5
         [Authorize(Roles = "Administrator")]

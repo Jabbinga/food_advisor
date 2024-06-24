@@ -1,4 +1,4 @@
-@model Licencjat.Models.Dish
+@model Licencjat.Models.DishCreateViewModel
 
 <form id="editForm" asp-action="Edit" enctype="multipart/form-data" method="post">
     <input type="hidden" asp-for="Id" />
@@ -15,8 +15,80 @@
     <div class="form-group">
         <label for="imageFile" class="control-label">Image</label>
         <input type="file" name="imageFile" class="form-control" />
+        @if (!string.IsNullOrEmpty(Model.ImagePath))
+        {
+        <img src="@Model.ImagePath" alt="Current Image" style="max-height: 200px; margin-top: 10px;" />
+        }
+    </div>
+    <div class="form-group">
+        <label asp-for="SelectedIngredients" class="control-label">Ingredients</label>
+        <div class="input-group mb-2">
+            <input type="text" id="ingredientSearch" class="form-control" placeholder="Search ingredients..." />
+            <div class="input-group-append">
+                <button type="button" id="ingredientSearchBtn" class="btn btn-outline-secondary">Search</button>
+            </div>
+        </div>
+        <div id="ingredientsList" class="form-control" style="height: 200px; overflow-y: scroll;">
+            @foreach (var ingredient in Model.Ingredients)
+            {
+            <div class="form-check">
+                <input class="form-check-input ingredient-checkbox" type="checkbox" name="SelectedIngredients" value="@ingredient.Id" id="ingredient_@ingredient.Id"
+                       @(Model.SelectedIngredients.Contains(ingredient.Id) ? "checked" : "") />
+                <label class="form-check-label" for="ingredient_@ingredient.Id">@ingredient.Name (@ingredient.Kcal Kcal/100g)</label>
+            </div>
+            }
+        </div>
+    </div>
+    <div class="form-group">
+        <label asp-for="SelectedTags" class="control-label">Tags</label>
+        <div class="input-group mb-2">
+            <input type="text" id="tagSearch" class="form-control" placeholder="Search tags..." />
+            <div class="input-group-append">
+                <button type="button" id="tagSearchBtn" class="btn btn-outline-secondary">Search</button>
+            </div>
+        </div>
+        <div id="tagsList" class="form-control" style="height: 200px; overflow-y: scroll;">
+            @foreach (var tag in Model.Tags)
+            {
+            <div class="form-check">
+                <input class="form-check-input tag-checkbox" type="checkbox" name="SelectedTags" value="@tag.Id" id="tag_@tag.Id"
+                       @(Model.SelectedTags.Contains(tag.Id) ? "checked" : "") />
+                <label class="form-check-label" for="tag_@tag.Id">@tag.Name</label>
+            </div>
+            }
+        </div>
     </div>
     <div class="form-group">
         <input type="submit" value="Save" class="btn btn-primary" />
     </div>
 </form>
+
+@section Scripts {
+<script>
+    $(document).ready(function() {
+        $('#ingredientSearchBtn').on('click', function() {
+            var searchText = $('#ingredientSearch').val().toLowerCase();
+            $('#ingredientsList .form-check').each(function() {
+                var label = $(this).find('label').text().toLowerCase();
+                if (label.includes(searchText)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+
+        $('#tagSearchBtn').on('click', function() {
+            var searchText = $('#tagSearch').val().toLowerCase();
+            $('#tagsList .form-check').each(function() {
+                var label = $(this).find('label').text().toLowerCase();
+                if (label.includes(searchText)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
+            });
+        });
+    });
+</script>
+}

@@ -76,77 +76,83 @@ ViewData["Title"] = "Dishes";
 </div>
 
 @section Scripts {
-<script>
-    $(function () {
-        $('#btnCreate').click(function () {
-            $.get('@Url.Action("Create", "Dish")', function (data) {
-                $('#createPartialContainer').html(data);
-                $('#createModal').modal('show');
+    <script>
+        $(function () {
+            // Handle Create button click
+            $('#btnCreate').click(function () {
+                $.get('@Url.Action("Create", "Dish")', function (data) {
+                    $('#createPartialContainer').html(data);
+                    $('#createModal').modal('show');
+                });
             });
-        });
 
-        $(document).on('submit', '#createForm', function (e) {
-            e.preventDefault();
-            var formData = new FormData(this);
+            // Handle Create form submission
+            $(document).on('submit', '#createForm', function (e) {
+                e.preventDefault();
+                var formData = new FormData(this);
 
-            $.ajax({
-                url: '@Url.Action("Create", "Dish")',
-                type: 'POST',
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function (response) {
-                    if (response.success) {
-                        $('#createModal').modal('hide');
-                        location.reload(); // Refresh the page or update the list as needed
-                    } else {
-                        $('#createPartialContainer').html(response); // Render the validation errors
+                $.ajax({
+                    url: '@Url.Action("Create", "Dish")',
+                    type: 'POST',
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        if (response.success) {
+                            $('#createModal').modal('hide');
+                            location.reload(); // Refresh the page or update the list as needed
+                        } else {
+                            $('#createPartialContainer').html(response); // Render the validation errors
+                        }
+                    },
+                    error: function () {
+                        alert('Error creating dish.');
                     }
-                },
-                error: function () {
-                    alert('Error creating dish.');
-                }
+                });
             });
-        });
 
-        $('#editModal').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget); // Button that triggered the modal
-            var id = button.data('id'); // Extract info from data-* attributes
-            var modal = $(this);
+            // Handle Edit button click
+            $('#editModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); // Button that triggered the modal
+                var id = button.data('id'); // Extract info from data-* attributes
 
-            // Use jQuery to fetch the form via Ajax
-            $.ajax({
-                url: '@Url.Action("Edit", "Dish")', // Replace with your actual controller
-                type: 'GET',
-                data: { id: id },
-                success: function (result) {
-                    $('#editModalBody').html(result);
-                }
-            });
-        });
-
-        // Handle form submission
-        $(document).on('submit', '#editForm', function (e) {
-            e.preventDefault();
-            var formData = new FormData(this);
-            $.ajax({
-                url: $(this).attr('action'),
-                type: $(this).attr('method'),
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function (response) {
-                    if (response.success) {
-                        $('#editModal').modal('hide');
-                        location.reload(); // Reload the page or update the necessary part of your page
-                    } else {
-                        $('#editModalBody').html(response);
+                // Use jQuery to fetch the form via Ajax
+                $.ajax({
+                    url: '@Url.Action("Edit", "Dish")',
+                    type: 'GET',
+                    data: { id: id },
+                    success: function (result) {
+                        $('#editModalBody').html(result);
                     }
-                }
+                });
+            });
+
+            // Handle Edit form submission
+            $(document).on('submit', '#editForm', function (e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+
+                $.ajax({
+                    url: $(this).attr('action'),
+                    type: $(this).attr('method'),
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        if (response.success) {
+                            $('#editModal').modal('hide');
+                            location.reload(); // Reload the page or update the necessary part of your page
+                        } else {
+                            $('#editModalBody').html(response); // Render the validation errors
+                        }
+                    },
+                    error: function () {
+                        alert('Error saving changes.');
+                    }
+                });
             });
         });
-    });
-</script>
+    </script>
 }
 
 <!-- Edit Modal -->
