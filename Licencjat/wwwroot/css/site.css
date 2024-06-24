@@ -30,7 +30,7 @@ body {
   background-position: center; /* Centers the background image */
 }
 
-/*to sprawia ze header jest jaki jest*/
+
 header {  
   background-image: url('/images/header.png');
   background-size: cover;
@@ -42,6 +42,7 @@ header {
   align-items: center;
   justify-content: center;
   background-color: transparent; /* Ensures the header background is transparent */
+  font-weight: bold;
   /*text-align: center; */
 }
 
