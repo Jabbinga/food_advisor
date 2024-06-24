@@ -126,7 +126,8 @@ public async Task<IActionResult> Sort(string searchString, string sortOrder, int
         {
             var viewModel = new DishCreateViewModel
             {
-                Ingredients = _context.Ingredients.ToList()
+                Ingredients = _context.Ingredients.ToList(),
+                Tags = _context.Tag.ToList()
             };
             return PartialView("_CreatePartial", viewModel);
         }
@@ -171,10 +172,20 @@ public async Task<IActionResult> Sort(string searchString, string sortOrder, int
                     await _context.SaveChangesAsync();
                 }
 
+                if (viewModel.SelectedTags != null && viewModel.SelectedTags.Any())
+                {
+                    foreach (var tagId in viewModel.SelectedTags)
+                    {
+                        _context.DishTags.Add(new DishTag { DishId = dish.Id, TagId = tagId });
+                    }
+                    await _context.SaveChangesAsync();
+                }
+
                 return Json(new { success = true });
             }
 
             viewModel.Ingredients = _context.Ingredients.ToList();
+            viewModel.Tags = _context.Tag.ToList();
             return PartialView("_CreatePartial", viewModel);
         }
         

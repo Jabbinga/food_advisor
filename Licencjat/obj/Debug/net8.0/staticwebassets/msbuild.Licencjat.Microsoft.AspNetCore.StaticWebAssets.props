@@ -256,6 +256,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-18 o 20.27.12_be0f16d0-b9d5-40f5-8db7-53ece7ca22c5.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-18 o 20.27.37_d48bb4f1-46c8-43df-b941-df21dd5921cd.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Licencjat</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Licencjat</BasePath>
+      <RelativePath>images/Zrzut ekranu 2024-06-18 o 20.27.37_d48bb4f1-46c8-43df-b941-df21dd5921cd.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-18 o 20.27.37_d48bb4f1-46c8-43df-b941-df21dd5921cd.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\images\Zrzut ekranu 2024-06-19 o 18.47.19_32023a99-ebc8-4c1f-8da6-2452a29593c3.png))">
       <SourceType>Package</SourceType>
       <SourceId>Licencjat</SourceId>

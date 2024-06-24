@@ -7,5 +7,7 @@ public class DishCreateViewModel
     public uint Kcal { get; set; }
     public string? ImagePath { get; set; }
     public List<int> SelectedIngredients { get; set; } = new List<int>();
+    public List<int>? SelectedTags { get; set; } = new List<int>();
     public IEnumerable<Ingredient>? Ingredients { get; set; }
+    public IEnumerable<Tag>? Tags { get; set; }
 }
