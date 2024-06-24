@@ -53,6 +53,14 @@
       "PackagePath": "staticwebassets\\images\\images_30c0d855-328d-4356-96ec-14f0f139d4df.jpg"
     },
     {
+      "Id": "D:\\REPOS\\Licencjat2024\\Licencjat\\wwwroot\\images\\spaghet_80175a0d-c80d-437c-b1b3-bbcd10469072.jpg",
+      "PackagePath": "staticwebassets\\images\\spaghet_80175a0d-c80d-437c-b1b3-bbcd10469072.jpg"
+    },
+    {
+      "Id": "D:\\REPOS\\Licencjat2024\\Licencjat\\wwwroot\\images\\spaghet_d2e94654-4f0b-4961-8f81-c61fdac0c6c1.jpg",
+      "PackagePath": "staticwebassets\\images\\spaghet_d2e94654-4f0b-4961-8f81-c61fdac0c6c1.jpg"
+    },
+    {
       "Id": "D:\\REPOS\\Licencjat2024\\Licencjat\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -10,25 +10,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b24c548-5ec9-4104-a5c7-ef24b51d447a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Views/Dish/_EditPartial.cshtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Views/Dish/_CreatePartial.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Licencjat.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Licencjat.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/DishController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/DishController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Dish/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Dish/Edit.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Views/Dish/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Dish/Create.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Views/Dish/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Dish/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Licencjat.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Licencjat.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.db-shm" beforeDir="false" afterPath="$PROJECT_DIR$/app.db-shm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.db-wal" beforeDir="false" afterPath="$PROJECT_DIR$/app.db-wal" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Licencjat.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Licencjat.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Licencjat.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Licencjat.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Licencjat.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Licencjat.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Licencjat.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Licencjat.staticwebassets.runtime.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/app.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/Licencjat.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/apphost.exe" afterDir="false" />
@@ -37,16 +35,8 @@
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.build.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.development.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.pack.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets.pack.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Licencjat.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.Licencjat.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.Licencjat.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.Licencjat.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Licencjat.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Licencjat.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Licencjat.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Licencjat.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Licencjat.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Licencjat.csproj.nuget.g.targets" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets/msbuild.Licencjat.Microsoft.AspNetCore.StaticWebAssets.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/staticwebassets/msbuild.Licencjat.Microsoft.AspNetCore.StaticWebAssets.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wwwroot/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/wwwroot/css/site.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

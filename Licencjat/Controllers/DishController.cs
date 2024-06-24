@@ -124,7 +124,8 @@ public async Task<IActionResult> Sort(string searchString, string sortOrder, int
         // GET: Dish/Create
         public IActionResult Create()
         {
-            return View();
+            var dish = new Dish(); // Create a new instance of Dish model
+            return PartialView("_CreatePartial", dish); // Return PartialView instead of View
         }
 
         // POST: Dish/Create
